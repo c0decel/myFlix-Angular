@@ -1,0 +1,13 @@
+<div class="full">
+    <div class="movieCard">
+        <mat-card *ngFor="let movie of movies; let i=index;">
+            <mat-dialog-content>
+                <mat-card-title>{{movie.Title}}</mat-card-title>
+                <mat-card-subtitle><img src={{movie.Image}} class="movieImage"></mat-card-subtitle>
+                <h2>Directed by {{movie.Director.Name}}</h2>
+                <h3>Genre: {{movie.Genre.Name}}</h3>
+                <p>{{movie.Description}}</p>
+            </mat-dialog-content>
+        </mat-card>
+    </div>
+</div>
