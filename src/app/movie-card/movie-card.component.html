@@ -1,13 +1,39 @@
-<div class="full">
-    <div class="movieCard">
-        <mat-card *ngFor="let movie of movies; let i=index;">
-            <mat-dialog-content>
-                <mat-card-title>{{movie.Title}}</mat-card-title>
-                <mat-card-subtitle><img src={{movie.Image}} class="movieImage"></mat-card-subtitle>
-                <h2>Directed by {{movie.Director.Name}}</h2>
-                <h3>Genre: {{movie.Genre.Name}}</h3>
-                <p>{{movie.Description}}</p>
-            </mat-dialog-content>
+<div class="titleSect">
+        <h1>All Movies</h1>
+</div>
+
+<div class="contentWrapper">
+    <div class="card">
+        <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
+            <mat-card-header>
+            <mat-card-title class="title">{{movie.Title}}</mat-card-title>
+                <mat-card-subtitle class="subtitle">Directed by: {{movie.Director.Name}}</mat-card-subtitle>
+            </mat-card-header>
+            <img class="image" src={{movie.Image}} alt= {{movie.Title}} />
+            <mat-card-actions>
+                <button
+                    mat-button
+                    class="button"
+                    color="primary"
+                >
+                    Genre
+                </button>
+                <button
+                    mat-button
+                    class="button"
+                    color="primary"
+                >
+                    Director
+                </button>
+                <button
+                    mat-button
+                    class="button"
+                    color="primary"
+                >
+                    Description
+                </button>
+                <mat-icon>favorite_border</mat-icon>
+            </mat-card-actions>
         </mat-card>
     </div>
 </div>
