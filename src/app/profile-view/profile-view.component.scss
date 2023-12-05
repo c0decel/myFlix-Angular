@@ -1,0 +1,29 @@
+$button-color: #d1a6ff;
+$background-color: #c2fffa;
+$card-color: #faf1aa;
+
+.button {
+    background-color: $button-color;
+    padding: 8px;
+    margin: 5px;
+    font-size: 20px;
+    color: black;
+}
+
+.infoBlock {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10%;
+}
+
+mat-card-title {
+    padding: 20px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
