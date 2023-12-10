@@ -20,6 +20,10 @@ export class UserRegFormComponent implements OnInit {
     
   }
 
+  /**
+   * Used to submit registration form inputs to API
+   * and create a new account
+   */
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
       console.log(result)

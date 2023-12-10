@@ -8,6 +8,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DetailsComponent implements OnInit {
 
+  /**
+   * Injects a title and subtitle to show movie details
+   */
+
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {

@@ -1,41 +1,61 @@
 $button-color: #d1a6ff;
 $background-color: #c2fffa;
 $card-color: #faf1aa;
+$card-background-color: #feffe6;
 
-.titleSect {
-    height: 20%;
+.body {
+    overflow-y: hidden;
+}
+
+.aspect-ratio-container {
+    width: fit-content;
     background-color: $background-color;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: left;
+}
+
+.title-container {
     position: fixed;
+    display: flex;
     width: 100%;
+    padding: 20px;
+    margin: 10px;
+    top: 0;
+    left: 0;
     z-index: 1;
+    background-color: aqua;
 }
 
 .navButtons {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: left;
+    justify-content: right;
+    text-align: left;
 }
 
-.contentWrapper {
-    padding-top: 11%;
+.card-container {
+    display: flex;
+    padding-top: 120px;
 }
 
 .card {
     display: flex;
+    height: auto;
+    width: fit-content;
     background-color: $card-color;
     padding: 20px;
 }
 
-h1 {
-    text-align: center;
-    font-size: 50px;
-    padding-top: 50px;
+mat-card {
+    background-color: $card-background-color;
 }
 
 .image {
-    width: 200px;
-    height: 300px;
-    align-items: center;
+    width: 50%;
+    height: 60%;
+    margin-left: 20px;
     padding: 20px;
 }
 

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 type User = { _id?: string, Username?: string, Pass?: string, Email?: string, Birthdate?: string, FavoriteMovies?: [] }
@@ -42,16 +41,25 @@ export class ProfileViewComponent implements OnInit {
     this.getFavoriteMovies();
   }
 
+  /**
+   * @returns user information
+   */
   getUser(): User {
     return JSON.parse(localStorage.getItem('user') || '{}');
   }
 
+  /**
+   * Gets a list of user's favorites
+   */
   getFavoriteMovies(): void {
     this.fetchApiData.getFavoriteMovies().subscribe((movies: any) => {
       this.favoriteMovies = movies;
     });
   }
 
+  /**
+   * Updates user's account information
+   */
   updateUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
       localStorage.setItem('user', JSON.stringify(result))

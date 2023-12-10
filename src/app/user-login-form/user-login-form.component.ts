@@ -22,6 +22,10 @@ export class UserLoginFormComponent {
 
     }
 
+    /**
+     * Used to submit login form inputs to API 
+     * and retrieve user information and token
+     */
     loginUser(): void {
       this.fetchApiData.userLogin(this.loginData).subscribe((result) => {
         console.log(result)

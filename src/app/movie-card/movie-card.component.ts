@@ -32,6 +32,10 @@ export class MovieCardComponent {
     this.getMovies();
   }
 
+  /**
+   * Returns all movies from API
+   * @returns array of movies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -40,6 +44,10 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * Opens popup with genre details
+   * @param genre name and description
+   */
   getGenre(name: string, description: string): void {
     this.dialog.open(DetailsComponent, {
       data: {
@@ -50,6 +58,10 @@ export class MovieCardComponent {
     })
   }
 
+  /**
+   * Opens popup with director details
+   * @param director name and description
+   */
   getDirector(name: string, bio: string): void {
     this.dialog.open(DetailsComponent, {
       data: {
@@ -60,6 +72,10 @@ export class MovieCardComponent {
     })
   }
 
+  /**
+   * Opens popup with movie details
+   * @param movie title and description
+   */
   getDetails(title: string, description: string): void {
     this.dialog.open(DetailsComponent, {
       data: {
@@ -81,10 +97,18 @@ export class MovieCardComponent {
     this.router.navigate(['welcome']);
   }
 
+  /**
+   * @param MovieID 
+   * @returns boolean if movie is in user's favorites or not
+   */
   isFavorite(MovieID: string): boolean {
     return this.fetchApiData.isFavoriteMovie(MovieID)
   }
 
+  /**
+   * Adds or removes a movie from a user's favorites
+   * @param MovieId 
+   */
   toggleFavorite(MovieId: string): void {
   if (this.isFavorite(MovieId)) {
     this.removeFavorite(MovieId);
@@ -93,6 +117,10 @@ export class MovieCardComponent {
   }
 }
 
+  /**
+   * Adds a movie to user's favorites
+   * @param MovieID 
+   */
   addFavorite(MovieID: string): void {
     this.fetchApiData.addFavoriteMovie(MovieID).subscribe(() => {
       this.dialog.open(DetailsComponent, {
@@ -104,6 +132,10 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * Removes a movie from user's favorites
+   * @param MovieID
+   */
   removeFavorite(MovieID: string): void {
     this.fetchApiData.removeFavoriteMovie(MovieID).subscribe(() => {
       this.dialog.open(DetailsComponent, {
